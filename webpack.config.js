@@ -1,9 +1,9 @@
 const path = require("path");
-
+const webpack = require('webpack');
 const config = {
   entry: {
     vendor: ["@babel/polyfill", "react"],
-    app: ["./src/components/index.js"]
+    app: ["./index.js"]
   },
   output: {
     path: path.resolve(__dirname, "public"),
@@ -20,7 +20,27 @@ const config = {
           }
         },
         exclude: /node_modules/
-      }
+      },
+      {
+        test: /\.svg$/,
+        use: 'file-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+             {
+                loader: 'style-loader'
+             }, 
+             {
+                loader: 'css-loader',
+                options: {
+                   importLoader: 1,
+                   modules: true,
+                   localIdentName: '[name]_[local]__[hash:base64:5]'
+                }
+             }
+        ]
+    }
     ]
   },
   resolve: {

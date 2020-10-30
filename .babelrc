@@ -3,5 +3,5 @@
       ["@babel/preset-env", { "targets": { "node": "current" } }],
       "@babel/preset-react"
     ],
-    "plugins": ["@babel/plugin-proposal-class-properties"]
+    "plugins": ["@babel/plugin-proposal-class-properties","inline-react-svg","react-css-modules"]
   }

@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
-import { Helmet } from 'react-helmet';
+import logo from './logo.svg';
+import './App.css'
+import React from 'react'
+import {Helmet} from 'react-helmet'
 function App() {
   return (
     <div className="App">
@@ -9,6 +11,7 @@ function App() {
           <meta name="theme-color" content="#008f68" />
         </Helmet>
       <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
